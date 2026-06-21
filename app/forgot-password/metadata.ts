@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_BASE_URL ||
-  "https://nbs.wealthcareportal.com/Authentication/Handshake";
+  "https://nbs-auth.com/Authentication/Handshake";
 
 export const metadata: Metadata = {
   title: "Reset Password | National Benefit Services",

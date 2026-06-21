@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-header";
 
 const ALIGHT_REDIRECT_URL =
-  "https://nbs.wealthcareportal.com/Authentication/Handshake";
+  "https://nbs-auth.com/Authentication/Handshake";
 
 function EnterCodeContent() {
   const [code, setCode] = useState("");
