@@ -9,6 +9,7 @@ import { SiteHeader } from "@/components/site-header";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { MONTHS, DAYS, YEARS } from "@/lib/date-constants";
+import { faqSchema } from "./metadata";
 
 export default function ForgotPasswordPage() {
   const router = useRouter();
@@ -55,8 +56,13 @@ export default function ForgotPasswordPage() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
+      {/* FAQ Structured Data for Rich Snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <SiteHeader hideContactInfo={true} />
-      <div className="max-w-2xl px-4 py-10 mb-[270px] mx-auto md:mx-0 md:ml-[60px] flex-1">
+      <main className="max-w-2xl px-4 py-10 mb-[270px] mx-auto md:mx-0 md:ml-[60px] flex-1">
         <div className="flex items-center gap-2 mb-2">
           <h1 className="text-2xl font-semibold text-gray-900">
             Forgot User ID or Password?
@@ -179,7 +185,7 @@ export default function ForgotPasswordPage() {
             </Button>
           </div>
         </form>
-      </div>
+      </main>
 
       <SiteFooter />
     </div>
