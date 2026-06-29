@@ -75,7 +75,7 @@ export default function ForgotPasswordVerifyPage() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <SiteHeader />
+      <SiteHeader hideContactInfo={true} />
       <div className="max-w-2xl px-4 py-10 mb-[270px] mx-auto md:mx-0 md:ml-[60px] flex-1">
         <div className="flex items-center gap-2 mb-2">
           <h2 className="text-base font-medium text-gray-900">

@@ -10,17 +10,17 @@
 .cookie-bar {
   background: #fff;
   border-bottom: 1px solid #d0cfc8;
-  padding: 12px 24px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 17px;
   flex-wrap: wrap;
 }
 
 .cookie-bar p {
   flex: 1;
-  min-width: 240px;
-  font-size: 13px;
+  min-width: 214px;
+  font-size: 11px;
   line-height: 1.55;
   color: #444;
 }
@@ -40,9 +40,9 @@
 
 .btn-outline-cookie,
 .btn-solid-cookie {
-  padding: 8px 20px;
-  border-radius: 30px;
-  font-size: 13px;
+  padding: 7px 17px;
+  border-radius: 26px;
+  font-size: 11px;
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
@@ -71,16 +71,16 @@
 .hero {
   display: flex;
   align-items: stretch;
-  min-height: 500px;
+  min-height: 425px;
   background: #e8e5de;
 }
 
 .login-panel {
   background: #fff;
-  width: 320px;
-  min-width: 280px;
+  width: 286px;
+  min-width: 250px;
   flex-shrink: 0;
-  padding: 32px 28px 28px;
+  padding: 27px 24px 24px;
   display: flex;
   flex-direction: column;
   border: 1px solid #ccc;
@@ -89,10 +89,10 @@
 }
 
 .sf-logo {
-  width: 160px;
+  width: 143px;
   height: auto;
   display: block;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .input-row {
@@ -100,13 +100,13 @@
   align-items: stretch;
   border: 1px solid #999;
   border-radius: 2px;
-  margin-bottom: 10px;
+  margin-bottom: 9px;
   overflow: hidden;
   background: #fff;
 }
 
 .icon-box {
-  width: 40px;
+  width: 36px;
   background: #555;
   display: flex;
   align-items: center;
@@ -115,8 +115,8 @@
 }
 
 .icon-box svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 15px;
   fill: #fff;
 }
 
@@ -124,9 +124,9 @@
   flex: 1;
   border: none;
   outline: none;
-  padding: 0 12px;
-  height: 40px;
-  font-size: 14px;
+  padding: 0 10px;
+  height: 34px;
+  font-size: 12px;
   color: #333;
   background: #fff;
 }
@@ -138,17 +138,17 @@
 .alight-btn-row {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
+  gap: 7px;
+  margin-bottom: 9px;
 }
 
 .alight-btn {
   background: #1a56db;
   color: #fff;
   border: none;
-  border-radius: 30px;
-  padding: 8px 16px;
-  font-size: 13px;
+  border-radius: 26px;
+  padding: 7px 14px;
+  font-size: 11px;
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
@@ -159,12 +159,12 @@
 }
 
 .help-badge {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #1a56db;
   color: #fff;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
@@ -176,10 +176,10 @@
 .show-pwd-row {
   display: flex;
   align-items: center;
-  gap: 7px;
-  font-size: 13px;
+  gap: 6px;
+  font-size: 11px;
   color: #333;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .logon-btn {
@@ -188,28 +188,35 @@
   color: #fff;
   border: none;
   border-radius: 2px;
-  padding: 12px;
-  font-size: 15px;
+  padding: 10px;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
   cursor: pointer;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
-.logon-btn:hover {
+.logon-btn:hover:not(:disabled) {
   background: #444;
+}
+
+.logon-btn:disabled {
+  background: #ccc;
+  color: #999;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .login-links {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  margin-bottom: 10px;
+  gap: 4px;
+  margin-bottom: 9px;
 }
 
 .login-links a {
   color: #005eb8;
-  font-size: 13px;
+  font-size: 11px;
   text-decoration: none;
 }
 
@@ -221,21 +228,21 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 6px;
-  margin-bottom: 10px;
+  gap: 5px;
+  margin-bottom: 9px;
 }
 
 .help-row a {
   color: #005eb8;
-  font-size: 13px;
+  font-size: 11px;
   text-decoration: none;
 }
 
 .screen-reader-row {
   display: flex;
   align-items: center;
-  gap: 7px;
-  font-size: 13px;
+  gap: 6px;
+  font-size: 11px;
   color: #333;
 }
 
@@ -244,7 +251,7 @@
   position: relative;
   overflow: hidden;
   background: #e8e5de;
-  min-height: 440px;
+  min-height: 374px;
 }
 
 .photos-area {
@@ -255,7 +262,7 @@
   bottom: 0;
   display: flex;
   align-items: center;
-  padding: 20px 0 20px 40px;
+  padding: 17px 0 17px 34px;
 }
 
 .photo-card {
@@ -274,21 +281,21 @@
 
 .photo-card .insta-bottom {
   background: #fff;
-  padding: 5px 8px;
+  padding: 4px 7px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
 }
 
 .heart-icon {
   color: #e0245e;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .comment-icon,
 .share-icon {
   color: #333;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .insta-dots {
@@ -322,7 +329,7 @@
 }
 
 .card-1 {
-  width: 230px;
+  width: 242px;
   left: 60px;
   top: 50%;
   transform: translateY(-52%) rotate(-5deg);
@@ -334,7 +341,7 @@
 }
 
 .card-2 {
-  width: 175px;
+  width: 184px;
   left: 240px;
   top: 50%;
   transform: translateY(-68%) rotate(6deg);
@@ -346,7 +353,7 @@
 }
 
 .card-3 {
-  width: 185px;
+  width: 194px;
   left: 220px;
   bottom: 30px;
   transform: rotate(-1deg);
@@ -444,7 +451,7 @@ footer {
   text-decoration: none;
   border-radius: 8px;
   padding: 8px 14px;
-  min-width: 134px;
+  min-width: 141px;
   transition: background 0.15s;
 }
 
@@ -523,7 +530,7 @@ footer {
 
 .cookie-notice-bottom p {
   flex: 1;
-  min-width: 240px;
+  min-width: 252px;
   font-size: 13px;
   line-height: 1.55;
   color: #444;
@@ -554,7 +561,7 @@ footer {
   }
 
   .card-1 {
-    width: 170px;
+    width: 179px;
     left: 20px;
   }
 
@@ -563,7 +570,7 @@ footer {
   }
 
   .card-2 {
-    width: 140px;
+    width: 147px;
     left: 170px;
   }
 
@@ -572,7 +579,7 @@ footer {
   }
 
   .card-3 {
-    width: 150px;
+    width: 158px;
     left: 155px;
   }
 
@@ -609,7 +616,7 @@ footer {
   }
 
   .card-1 {
-    width: 130px;
+    width: 137px;
     left: 10px;
   }
 
@@ -618,7 +625,7 @@ footer {
   }
 
   .card-2 {
-    width: 115px;
+    width: 121px;
     left: 128px;
   }
 
@@ -627,7 +634,7 @@ footer {
   }
 
   .card-3 {
-    width: 120px;
+    width: 126px;
     left: 112px;
     bottom: 10px;
   }

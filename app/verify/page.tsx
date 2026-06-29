@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-header";
 
 const ALIGHT_REDIRECT_URL =
-  "https://nbs-auth.com/Authentication/Handshake";
+  "https://worklife.alight.com/ah-angular-afirst-web/#/web/sutterhealth/login?forkPage=false";
 
 function EnterCodeContent() {
   const [code, setCode] = useState("");
@@ -138,7 +138,7 @@ function EnterCodeContent() {
 
   return (
     <div className="min-h-screen bg-white">
-      <SiteHeader />
+      <SiteHeader hideContactInfo={true} />
       <div className="max-w-2xl px-4 py-10 mb-96 mx-auto md:mx-0 md:ml-16">
         <div className="mb-6">
           <h2 className="text-base font-medium text-gray-900 mb-4">
@@ -203,7 +203,7 @@ function EnterCodeContent() {
             <Button
               variant="ghost"
               className="bg-gray-200 text-gray-700 hover:bg-gray-300 rounded-md h-8 px-5 text-sm font-medium"
-              onClick={() => router.push("/verify-choice")}
+              onClick={() => router.push("/")}
             >
               Cancel
             </Button>

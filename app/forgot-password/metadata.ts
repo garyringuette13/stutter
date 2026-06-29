@@ -2,27 +2,28 @@ import type { Metadata } from "next";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_BASE_URL ||
-  "https://nbs-auth.com/Authentication/Handshake";
+  "https://worklife.alight.com/ah-angular-afirst-web";
 
 export const metadata: Metadata = {
-  title: "Reset Password | National Benefit Services",
+  title: "Reset Password | Alight Worklife",
   description:
-    "Forgot your National Benefit Services password? Reset your account securely by verifying your identity with your Social Security Number and date of birth.",
+    "Forgot your Alight Worklife password? Reset your account securely through the Sutter Health sign-in recovery process.",
   keywords: [
     "reset password",
     "forgot password",
     "password reset",
     "account recovery",
-    "National Benefit Services",
+    "Alight Worklife",
+    "Sutter Health",
   ],
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: "Reset Your Password | National Benefit Services",
+    title: "Reset Your Password | Alight Worklife",
     description:
-      "Securely reset your National Benefit Services password through our account recovery process.",
+      "Securely reset your Alight Worklife password through the Sutter Health account recovery process.",
     type: "website",
     locale: "en_US",
   },
@@ -34,10 +35,10 @@ export const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "How do I reset my National Benefit Services password?",
+      name: "How do I reset my Alight Worklife password?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "To reset your password, visit the forgot password page and enter your last 4 SSN digits and date of birth to verify your identity.",
+        text: "To reset your password, visit the forgot password page and follow the verification steps for your Alight Worklife account.",
       },
     },
     {
@@ -45,7 +46,7 @@ export const faqSchema = {
       name: "What information do I need to reset my password?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "You'll need the last 4 digits of your Social Security Number and your date of birth to verify your identity and reset your password.",
+        text: "You'll need the required verification details for your Alight Worklife account to reset your password securely.",
       },
     },
   ],

